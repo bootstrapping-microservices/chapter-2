@@ -11,7 +11,7 @@ if (!process.env.VIDEOS_PATH) {
 const VIDEOS_PATH = process.env.VIDEOS_PATH;
 
 //
-// Simple end-point that lists videos.
+// Route that lists videos.
 //
 app.get("/videos", (req, res) => {
     fs.readdir(VIDEOS_PATH, (err, files)  => {
