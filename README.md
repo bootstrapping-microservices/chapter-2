@@ -1,3 +1,3 @@
-# chapter-2
+# Chapter-2
 
-Code and examples for chapter 2 of Bootstrapping Microservices
+Code and examples for Chapter 2 of Bootstrapping Microservices.

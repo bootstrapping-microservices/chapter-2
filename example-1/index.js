@@ -8,5 +8,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`First example app listening on port ${port}!`);
+    console.log(`First example app listening on port ${port}, point your browser at http://localhost:3000`);
 });

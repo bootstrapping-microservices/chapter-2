@@ -28,5 +28,5 @@ app.get("/videos", (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Microservice listening on port ${port}!`);
+    console.log(`Microservice listening on port ${port}, , point your browser at http://localhost:3000/videos`);
 });
