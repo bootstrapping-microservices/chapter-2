@@ -8,6 +8,12 @@ Before running install dependencies:
 
     npm install
 
+Set the PORT number (on MacOS/Linux):
+    export PORT=3000
+
+Set the PORT number (on Windows):
+    set PORT=3000
+
 To start the microservice:
 
     node index.js

@@ -2,31 +2,38 @@ const express = require("express");
 const fs = require("fs");
 
 const app = express();
-const port = 3000;
 
-if (!process.env.VIDEOS_PATH) {
-    throw new Error("Please specify the path to videos using the environment variable VIDEOS_PATH.");
+if (!process.env.PORT) {
+    throw new Error("Please specify the port number for the HTTP server with the environment variable PORT.");
 }
 
-const VIDEOS_PATH = process.env.VIDEOS_PATH;
+const PORT = process.env.PORT;
 
 //
-// Route that lists videos.
+// Route for video streaming.
 //
-app.get("/videos", (req, res) => {
-    fs.readdir(VIDEOS_PATH, (err, files)  => {
+app.get("/video", (req, res) => {
+
+    //
+    // Original video from here:
+    // https://sample-videos.com
+    //
+    const path = "../videos/SampleVideo_1280x720_1mb.mp4";
+    fs.stat(path, (err, stats) => {
         if (err) {
-            console.error("An error occurred.");
-            console.error(err && err.stack || err);
+            console.error("An error occurred ");
+            res.sendStatus(500);
+            return;
         }
-        else {
-            res.json({
-                videos: files,
-            })
-        }
+
+        res.writeHead(200, {
+            "Content-Length": stats.size,
+            "Content-Type": "video/mp4",
+        });
+        fs.createReadStream(path).pipe(res);
     });
 });
 
-app.listen(port, () => {
-    console.log(`Microservice listening on port ${port}, point your browser at http://localhost:3000/videos`);
+app.listen(PORT, () => {
+    console.log(`Microservice listening on port ${PORT}, point your browser at http://localhost:${PORT}/video`);
 });
