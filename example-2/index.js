@@ -5,7 +5,7 @@ const app = express();
 const port = 3000;
 
 //
-// Route for video streaming.
+// Registers a route for video streaming.
 //
 // Original code for this:
 // https://medium.com/better-programming/video-stream-with-node-js-and-html5-320b3191a6b6
@@ -32,6 +32,9 @@ app.get("/video", (req, res) => {
     });
 });
 
+//
+// Starts the HTTP server.
+//
 app.listen(port, () => {
     console.log(`Microservice listening on port ${port}, point your browser at http://localhost:3000/video`);
 });

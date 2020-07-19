@@ -3,14 +3,20 @@ const fs = require("fs");
 
 const app = express();
 
+//
+// Throws an error if the PORT environment variable is missing.
+//
 if (!process.env.PORT) {
     throw new Error("Please specify the port number for the HTTP server with the environment variable PORT.");
 }
 
+//
+// Extracts the PORT environment variable.
+//
 const PORT = process.env.PORT;
 
 //
-// Route for video streaming.
+// Registers a route for video streaming.
 //
 app.get("/video", (req, res) => {
 
@@ -34,6 +40,9 @@ app.get("/video", (req, res) => {
     });
 });
 
+//
+// Starts the HTTP server.
+//
 app.listen(PORT, () => {
     console.log(`Microservice listening on port ${PORT}, point your browser at http://localhost:${PORT}/video`);
 });
