@@ -5,7 +5,7 @@ const app = express();
 const port = 3000;
 
 //
-// Registers a route for video streaming.
+// Registers a HTTP GET route for video streaming.
 //
 // Original code for this:
 // https://medium.com/better-programming/video-stream-with-node-js-and-html5-320b3191a6b6
