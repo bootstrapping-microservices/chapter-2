@@ -1,6 +1,6 @@
 # Example-2
 
-Example number 2 from Chapter 2 of [Bootstrapping Microservices](http://bit.ly/2o0aDsP).
+Example number 2 from Chapter 2 of [Bootstrapping Microservices](https://www.bootstrapping-microservices.com).
 
 You need Node.js installed to run this.
 
